@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+Transaction Tracker App
+A simple ReactJS application that allows you to view a table of transactions, add new transactions, and filter transactions by description. The app fetches transaction data from a db.json file and displays it in a user-friendly interface.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Prerequisites
+Before you begin, ensure you have the following requirements in place:
 
-## Available Scripts
+Node.js and npm (Node Package Manager) installed on your system.
+A text editor or IDE for code editing (e.g., Visual Studio Code).
+Installation
+Clone this repository to your local machine:
 
-In the project directory, you can run:
+bash
+Copy code
+git clone https://github.com/your/repo.git
+Navigate to the project directory:
 
-### `npm start`
+bash
+Copy code
+cd transaction-tracker-app
+Install project dependencies using npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+npm install
+Usage
+Make sure you have a db.json file in your project directory containing transaction data. You can modify this file or replace it with your own data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Start the React development server:
 
-### `npm test`
+bash
+Copy code
+npm start
+Open your browser and navigate to http://localhost:3000 to access the Transaction Tracker app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app will display a table of transactions fetched from db.json.
 
-### `npm run build`
+Use the search bar to filter transactions by description. Only transactions matching the search term will be displayed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can also add new transactions using the form (implementation of the form is not included in this README, but it can be added to the App component).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Project Structure
+App.js: The main component that fetches data, manages state, and renders the user interface.
+TransactionsTable.js: Component responsible for displaying the list of transactions.
+Transaction.js: Component for rendering individual transactions.
+db.json: JSON file containing transaction data.
+Contributing
+Feel free to contribute to this project by submitting issues or pull requests. We welcome any improvements, bug fixes, or additional features.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Acknowledgments
+This project is a basic template for a ReactJS app that fetches and displays data.
+You can extend and modify this code to suit your specific needs and requirements.
+You can customize this README to include more specific information about your project, such as installation instructions, usage details, and any additional features you may add.
