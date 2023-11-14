@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import TransactionTable from './components/TransactionTable';
+import TransactionForm from './components/TransactionForm';
+import SearchBar from "./components/SearchBar"
+import './App.css'
 import './App.css';
 
-function App() {
+const App = () => {
+  const [transactions, setTransactions] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    fetchTransactions();
+  }, []);
+
+  const fetchTransactions = async () => {
+    try {
+      const response = await fetch('http://localhost:8001/transactions');
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const transactionsArray = data.transactions || data;
+
+      setTransactions(transactionsArray);
+    } catch (error) {
+      console.error('Error fetching transactions:', error);
+    }
+  };
+
+  const handleAddTransaction = (newTransaction) => {
+    setTransactions([...transactions, newTransaction]);
+  };
+
+  const filteredTransactions = transactions.filter((transaction) =>
+    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='parentdiv'>
+      <div id='Siteheader'><h1>Flat ironBank</h1></div>
+      <TransactionForm onAddTransaction={handleAddTransaction} />
+      <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+      <TransactionTable transactions={filteredTransactions} />
     </div>
   );
-}
+};
 
 export default App;
