@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TransactionTable from './components/TransactionTable';
 import TransactionForm from './components/TransactionForm';
-import SearchBar from "./components/SearchBar"
+import SearchBar from "./components/Search"
 import './App.css'
 import './App.css';
 
